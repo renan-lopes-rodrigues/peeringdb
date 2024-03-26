@@ -6,4 +6,4 @@ start:
 	# ./Ctl/dev/run.sh createsuperuser
 	./Ctl/dev/run.sh createcachetable
 	./Ctl/dev/compose.sh up -d peeringdb
-	./Ctl/dev/run.sh pdb_load_data --commit
+	# ./Ctl/dev/run.sh pdb_load_data --commit
