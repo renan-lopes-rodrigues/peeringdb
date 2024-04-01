@@ -330,11 +330,11 @@ set_from_env("SECRET_KEY")
 
 # database
 set_option("DATABASE_ENGINE", "mysql")
-set_option("DATABASE_HOST", "127.0.0.1")
-set_option("DATABASE_PORT", "")
-set_option("DATABASE_NAME", "peeringdb")
-set_option("DATABASE_USER", "peeringdb")
-set_option("DATABASE_PASSWORD", "")
+set_option("DATABASE_HOST", "peeringdbi-01-171148358309.mysql.globoi.com")
+set_option("DATABASE_PORT", "3306")
+set_option("DATABASE_NAME", "peeringdb_internal")
+set_option("DATABASE_USER", "u_peeringdb_inte")
+set_option("DATABASE_PASSWORD", "NPkh4kKzXS")
 
 # redis
 set_option("REDIS_HOST", "127.0.0.1")

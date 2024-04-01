@@ -58,9 +58,9 @@ services:
       # - database
       # - elasticsearch
     environment:
-      DATABASE_USER: peeringdb
-      DATABASE_PASSWORD: devPASSWORD
-      DATABASE_HOST: database
+      DATABASE_USER: u_peeringdb_inte
+      DATABASE_PASSWORD: NPkh4kKzXS
+      DATABASE_HOST: peeringdb_internal
       REDIS_HOST: redis
       REDIS_PASSWORD: devPASSWORD
     ports:

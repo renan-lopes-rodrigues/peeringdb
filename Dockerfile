@@ -25,7 +25,7 @@ ARG run_deps=" \
     libgcc \
     "
 
-FROM python:3.11-alpine as base
+FROM --platform=linux/amd64 python:3.11-alpine as base
 
 ARG virtual_env=/srv/www.peeringdb.com/venv
 
@@ -118,7 +118,7 @@ COPY Ctl/docker/django-uwsgi.ini etc/
 
 USER pdb
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["runserver"]
+# CMD ["runserver"]
 
 #### entry point from final image, not tester
 FROM final
@@ -129,4 +129,4 @@ COPY Ctl/docker/django-uwsgi.ini etc/
 
 USER pdb
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["runserver"]
+# CMD ["runserver"]
