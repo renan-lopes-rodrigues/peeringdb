@@ -25,7 +25,7 @@ ARG run_deps=" \
     libgcc \
     "
 
-FROM --platform=linux/amd64 python:3.11-alpine as base
+FROM python:3.11-alpine as base
 
 ARG virtual_env=/srv/www.peeringdb.com/venv
 
@@ -94,6 +94,7 @@ RUN true
 COPY Ctl/docker/inetd.conf /etc/
 
 RUN chown -R pdb:pdb api-cache locale media var/log coverage
+# RUN runserver 0.0.0.0:8888
 
 #### test image here
 FROM final as tester
@@ -118,7 +119,8 @@ COPY Ctl/docker/django-uwsgi.ini etc/
 
 USER pdb
 ENTRYPOINT ["./entrypoint.sh"]
-# CMD ["runserver"]
+EXPOSE 8888
+CMD ["runserver 0.0.0.0:8888"]
 
 #### entry point from final image, not tester
 FROM final
@@ -129,4 +131,4 @@ COPY Ctl/docker/django-uwsgi.ini etc/
 
 USER pdb
 ENTRYPOINT ["./entrypoint.sh"]
-# CMD ["runserver"]
+CMD ["runserver 0.0.0.0:8888"]

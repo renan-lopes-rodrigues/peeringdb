@@ -324,7 +324,7 @@ MIGRATION_MODULES = {"django_peeringdb": None}
 set_from_env("SERVER_EMAIL")
 
 # Error emails are dispatched to this address
-set_option("OPERATIONS_EMAIL", SERVER_EMAIL)
+set_option("OPERATIONS_EMAIL", 'SERVER_EMAIL')
 
 set_from_env("SECRET_KEY")
 
